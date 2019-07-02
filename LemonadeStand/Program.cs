@@ -4,33 +4,31 @@ namespace LemonadeStand
 {
     class Program
     {
+        static decimal GetDecimalAnswerFromUser(string question) // we need to be given a question to ask... then the rest will happen
+        {
+            Console.WriteLine("??");
+            string response = Console.ReadLine();
+            decimal answer = decimal.Parse(response);
+            return answer;
+        }
         static void Main(string[] args)
         {
             LemonadeStand stand = new LemonadeStand();
 
             Console.WriteLine("What is the name of this lemonade stand?");
             stand.Name = Console.ReadLine();
-         
 
-            Console.WriteLine("How much will your table cost?");
-            string tableCostResponse = Console.ReadLine();
-            stand.TableCost = decimal.Parse(tableCostResponse);
+            stand.TableCost = GetDecimalAnswerFromUser("How much will your table cost?");
+            stand.ChairCost = GetDecimalAnswerFromUser("How much will your chair cost?");
+            stand.SignCost = GetDecimalAnswerFromUser("How much will your sign cost?");
+            stand.LemonsCostPerCup = GetDecimalAnswerFromUser("How much will the lemon cost per cup?");
+            stand.SugarCostPerCup = GetDecimalAnswerFromUser("How much will the sugar cost per cup?");
+            stand.PricePerCup = GetDecimalAnswerFromUser("What will be the price of a cup?");
 
-            Console.WriteLine("How much will your chair cost?");
-            string chairCostResponse = Console.ReadLine();
-            stand.ChairCost = decimal.Parse(chairCostResponse);
+            Console.WriteLine("How many cups will you sell?");
+            string numberOfCupsResponse = Console.ReadLine();
+            stand.NumberOfCupsSold = int.Parse(numberOfCupsResponse);
 
-            Console.WriteLine("How much will your sign cost?");
-            string signCostResponse = Console.ReadLine();
-            stand.SignCost = decimal.Parse(signCostResponse);
-
-            Console.WriteLine("How much will the lemon cost per cup?");
-            string lemonCostResponse = Console.ReadLine();
-            stand.LemonsCostPerCup = decimal.Parse(lemonCostResponse);
-                
-            Console.WriteLine("What will be the price of a cup?");
-            string cupPriceResponse = Console.ReadLine();
-            stand.PricePerCup = decimal.Parse(cupPriceResponse);
 
 
 
