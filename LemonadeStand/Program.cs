@@ -29,9 +29,7 @@ namespace LemonadeStand
             string numberOfCupsResponse = Console.ReadLine();
             stand.NumberOfCupsSold = int.Parse(numberOfCupsResponse);
 
-            decimal totalCost = stand.GetTotalExpenses();
-            decimal totalRevenue = stand.GetTotalRevenue();
-            decimal totalProfit = totalRevenue - totalCost;
+            decimal totalProfit = stand.GetTotalProfit();
 
             Console.WriteLine("Your profit will be $" + totalProfit);
         }

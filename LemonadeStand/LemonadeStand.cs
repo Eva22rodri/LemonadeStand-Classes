@@ -28,6 +28,15 @@ namespace LemonadeStand
 
         }
 
+        public decimal GetTotalProfit()
+        {
+            //***  Could have written these three lines instead of the bottom line (line 38)  ***\\           
+            //decimal totalRevenue = GetTotalRevenue();
+            //decimal totalExpenses = GetTotalExpenses();
+            //return totalRevenue - totalExpenses;
+
+            return GetTotalRevenue() - GetTotalExpenses();
+        }
 
     }
 }
